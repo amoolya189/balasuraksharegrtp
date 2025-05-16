@@ -1,5 +1,5 @@
 This is a django based web application 
-hence after adding the project to the specifies path 
+hence after adding the project to the specified path 
 >cd thatpath/project
 
 >test/scripts/activate
