@@ -28,26 +28,37 @@
 - Python (>= 3.6)
 - pip
 
-### Setup
-in command prompt:
->mkdir project_directory
->cd project_directory
->python -m venv test
->test/scripts/activate
->pip install django
->django-admin startproject project_name
->cd project_name
->python manage.py runserver
---this will check if django installed successfully
---now again open terminal and start app
->cd project_directory
->cd proj_name
->django-admin startapp app_name
+ # Create a new project directory
+mkdir project_directory
+cd project_directory
 
- #to view the final output
- >cd project_directory
->test/scripts/activate
->cd project_name
->python manage.py runserver
---click on the link displayed there
+# Create and activate a virtual environment
+python -m venv test
+test\Scripts\activate
+
+# Install Django
+pip install django
+
+# Start a new Django project
+django-admin startproject project_name
+cd project_name
+
+# Run the development server to check installation
+python manage.py runserver
+if Django is installed correctly, you’ll see a local development server link (e.g., http://127.0.0.1:8000/). Click on it in your browser to confirm it’s working.
+in command prompt:to start the django app also
+cd project_directory
+cd project_name
+django-admin startapp app_name
+
+to view the final output
+# Navigate back to the project directory
+cd project_directory
+test\Scripts\activate
+cd project_name
+
+# Run the server
+python manage.py runserver
+
+
 
