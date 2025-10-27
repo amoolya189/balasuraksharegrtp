@@ -7,7 +7,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from django.conf import settings
 from .models import IncidentReport, CustomUser
-from .forms import ReportForm
+from .forms import IncidentReportForm, IssueReportForm
+
 
 # Home and Static Pages
 def index(request):
@@ -90,12 +91,12 @@ def logout_view(request):
 # Incident Reporting
 def report_incident(request):
     if request.method == 'POST':
-        form = ReportForm(request.POST, request.FILES)
+        form = IncidentReportForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('user_dashboard')
     else:
-        form = ReportForm()
+        form = IncidentReportForm()
     return render(request, 'suraksha/report_incident.html', {'form': form})
 
 def user_dashboard(request):
@@ -129,7 +130,7 @@ def send_report(request):
 # Email Notification to Parents
 def report_issue(request):
     if request.method == 'POST':
-        form = ReportForm(request.POST)
+        form = IssueReportForm(request.POST)
         if form.is_valid():
             victim_email = request.user.email  # From logged-in user
             parent_email = form.cleaned_data['parent_email']
@@ -153,8 +154,6 @@ def report_issue(request):
                     'error': f"Failed to send email: {str(e)}"
                 })
     else:
-        form = ReportForm()
+        form = IssueReportForm()
 
     return render(request, 'suraksha/report_issue.html', {'form': form})
-
- 
