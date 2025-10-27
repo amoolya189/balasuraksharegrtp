@@ -4,6 +4,34 @@
 
 ---
 
+## 🪜 Setup Instructions
+
+Follow these simple steps to get the project running locally:
+
+### 1️⃣ Create a new directory for the project
+
+mkdir balasuraksha_project
+cd balasuraksha_project
+
+2️⃣ Clone the repository
+git clone https://github.com/your-username/balasuraksharegrtp.git
+
+3️⃣ Navigate into the project folder
+cd balasuraksharegrtp/balasuraksha
+
+4️⃣ Run the Django development server
+python manage.py runserver
+
+5️⃣ Open the website
+
+Visit the following URL in your browser:
+
+http://127.0.0.1:8000/
+
+## ⚠️ Troubleshooting
+
+If you encounter any errors (for example, “No module named 'django'” or “Pillow not installed”), you may need to install missing dependencies.
+
 ## 🌟 Features
 
 - 🛡️ **Child Safety Focus** – Designed to empower and protect children through an intuitive platform.
